@@ -8,7 +8,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: claim_able_challenge_development
+  host:     flame.mongohq.com
+  port:     27098
+  username: temp
+  password: temp1234
+  database: claimable_challenge
 
 test:
   <<: *defaults

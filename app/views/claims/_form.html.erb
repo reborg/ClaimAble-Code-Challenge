@@ -1,0 +1,53 @@
+<%= form_for(@claim) do |f| %>
+  <% if @claim.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@claim.errors.count, "error") %> prohibited this claim from being saved:</h2>
+
+      <ul>
+      <% @claim.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :claim_type %><br />
+    <%= f.text_field :claim_type %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.text_field :active %>
+  </div>
+  <div class="field">
+    <%= f.label :claim_location_postcode %><br />
+    <%= f.text_field :claim_location_postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_name %><br />
+    <%= f.text_field :customer_name %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_postcode %><br />
+    <%= f.text_field :customer_postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_phone %><br />
+    <%= f.text_field :customer_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_dob %><br />
+    <%= f.text_field :customer_dob %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_loss %><br />
+    <%= f.text_field :date_of_loss %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
