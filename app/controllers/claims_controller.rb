@@ -82,7 +82,8 @@ class ClaimsController < ApplicationController
   end
 
   def search
-    @claims = Claim.find()
+    @claims = Claim.find(:all)
+    render :action => :index
   end
 
 end

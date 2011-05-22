@@ -132,10 +132,16 @@ describe ClaimsController do
   end
 
   describe "searching for claims" do
-    it 'assigns all found claims' do
+    before(:each) do
       Claim.stub(:find).and_return([1,2,3])
+    end
+    it 'assigns all found claims' do
       post :search, :q => 'some' 
       assigns(:claims).should eql([1,2,3])
+    end
+    it 'renders the index action' do
+      post :search, :q => 'some' 
+      response.should render_template :index 
     end
   end
 
