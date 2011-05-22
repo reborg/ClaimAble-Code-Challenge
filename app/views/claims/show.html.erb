@@ -16,26 +16,6 @@
 </p>
 
 <p>
-  <b>Customer name:</b>
-  <%= @claim.customer_name %>
-</p>
-
-<p>
-  <b>Customer postcode:</b>
-  <%= @claim.customer_postcode %>
-</p>
-
-<p>
-  <b>Customer phone:</b>
-  <%= @claim.customer_phone %>
-</p>
-
-<p>
-  <b>Customer dob:</b>
-  <%= @claim.customer_dob %>
-</p>
-
-<p>
   <b>Cost:</b>
   <%= @claim.cost %>
 </p>
@@ -45,6 +25,28 @@
   <%= @claim.date_of_loss %>
 </p>
 
+<%= link_to 'Edit', edit_claim_path(@claim) %> | <%= link_to 'Back', claims_path %>
 
-<%= link_to 'Edit', edit_claim_path(@claim) %> |
-<%= link_to 'Back', claims_path %>
+<h2>Current customers for this claim</h2> 
+
+<% if @claim.customers.empty? %>
+  <h3>No customers</h3> 
+<% else -%>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>postcode</th>
+      <th>phone</th>
+      <th>date of birth</th>
+    </tr>
+  <%= @claim.customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.postcode %></td>
+      <td><%= customer.phone %></td>
+      <td><%= customer.dob %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end -%>
+

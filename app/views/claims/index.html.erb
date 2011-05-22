@@ -2,7 +2,7 @@
 
 <br />
 
-<% form_tag(search_path) do -%>
+<%= form_tag(search_path) do -%>
   <%= text_field_tag('search') %>
   <%= submit_tag("search!") %>
   <%= link_to 'Reset', root_path %>
@@ -23,7 +23,7 @@
     <th></th>
   </tr>
 
-<% @claims.each do |claim| %>
+<%= @claims.each do |claim| %>
   <tr>
     <td><%= claim.claim_type %></td>
     <td><%= claim.active %></td>

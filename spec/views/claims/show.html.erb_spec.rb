@@ -2,38 +2,22 @@ require 'spec_helper'
 
 describe "claims/show.html.erb" do
   before(:each) do
+    customer = stub_model(Customer)
     @claim = assign(:claim, stub_model(Claim,
       :claim_type => "",
       :active => "",
       :claim_location_postcode => "",
-      :customer_name => "",
-      :customer_postcode => "",
-      :customer_phone => "",
-      :customer_dob => "",
+      :customers => [customer]*3,
       :cost => "",
       :date_of_loss => ""
     ))
   end
 
-  it "renders attributes in <p>" do
+  it "renders customers as a specific section" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
+    assert_select "table" do
+      assert_select "tr", :count => 3 + 1
+    end
   end
+
 end
