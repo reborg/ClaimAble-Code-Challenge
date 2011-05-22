@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5.rc1'
+gem 'rails', "3.0.7"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,6 +28,7 @@ gem 'rails', '3.0.5.rc1'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "bson_ext"
-gem "mongoid", ">= 2.0.0.beta.19"
-gem "rspec-rails", "= 2.0.1", :group => [:development, :test]
+gem "mongoid", "~>2.0"
+gem "bson_ext", "1.3.1"
+gem "rspec-rails", :group => [:development, :test]
+gem 'rake', '0.8.7'
