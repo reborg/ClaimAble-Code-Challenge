@@ -29,9 +29,9 @@ describe ClaimsController do
 
   describe "GET index" do
     it "assigns all claims as @claims" do
-      claim = Claim.create! valid_attributes
+      Claim.stub(:all).and_return([1,2,3])
       get :index
-      assigns(:claims).should eq([claim])
+      assigns(:claims).should eq([1,2,3])
     end
   end
 
