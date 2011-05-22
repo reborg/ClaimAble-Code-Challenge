@@ -133,7 +133,7 @@ describe ClaimsController do
 
   describe "searching for claims" do
     before(:each) do
-      Claim.stub(:find).and_return([1,2,3])
+      Claim.stub(:where).and_return([1,2,3])
     end
     it 'assigns all found claims' do
       post :search, :q => 'some' 
