@@ -39,7 +39,7 @@
       <th>phone</th>
       <th>date of birth</th>
     </tr>
-  <%= @claim.customers.each do |customer| %>
+  <% @claim.customers.each do |customer| %>
     <tr>
       <td><%= customer.name %></td>
       <td><%= customer.postcode %></td>
@@ -49,4 +49,3 @@
   <% end %>
   </table>
 <% end -%>
-
