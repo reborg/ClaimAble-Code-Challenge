@@ -80,4 +80,9 @@ class ClaimsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def search
+    @claims = Claim.find()
+  end
+
 end

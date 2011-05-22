@@ -131,4 +131,12 @@ describe ClaimsController do
     end
   end
 
+  describe "searching for claims" do
+    it 'assigns all found claims' do
+      Claim.stub(:find).and_return([1,2,3])
+      post :search, :q => 'some' 
+      assigns(:claims).should eql([1,2,3])
+    end
+  end
+
 end
