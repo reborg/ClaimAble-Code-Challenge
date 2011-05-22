@@ -82,7 +82,7 @@ class ClaimsController < ApplicationController
   end
 
   def search
-    @claims = Claim.find(:all)
+    @claims = Claim.where({"claim_location_postcode" => /#{params[:search]}/})
     render :action => :index
   end
 

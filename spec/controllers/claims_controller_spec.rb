@@ -140,7 +140,7 @@ describe ClaimsController do
       assigns(:claims).should eql([1,2,3])
     end
     it 'renders the index action' do
-      post :search, :q => 'some' 
+      post :search, :search => 'some' 
       response.should render_template :index 
     end
   end
