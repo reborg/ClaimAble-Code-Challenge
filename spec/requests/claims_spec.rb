@@ -1,11 +1,14 @@
 require 'spec_helper'
 
 describe "Claims" do
+
   describe "GET /claims" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get claims_path
+
+    it "should show the search results" do
+      post search_path, :search => "N1 WDEF"
       response.status.should be(200)
     end
+
   end
+
 end

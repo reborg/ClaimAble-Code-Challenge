@@ -17,10 +17,10 @@ development:
 test:
   <<: *defaults
   host:     flame.mongohq.com
-  port:     27098
-  username: temp
-  password: temp1234
-  database: claimable_challenge
+  port:     27099
+  username: reborg
+  password: cocomero
+  database: scratch
 
 # set these environment variables on your prod server
 production:
