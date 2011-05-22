@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "claims/index.html.erb" do
+
   before(:each) do
     assign(:claims, [
       stub_model(Claim,
@@ -31,5 +32,10 @@ describe "claims/index.html.erb" do
   it "renders a list of claims" do
     render
     assert_select "tr", :count => 2 + 1 # header
+  end
+
+  it 'renders a search box form' do
+    render  
+    assert_select "form" 
   end
 end

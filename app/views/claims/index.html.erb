@@ -1,5 +1,14 @@
 <h1>Listing claims</h1>
 
+<br />
+
+<% form_tag(search_path) do -%>
+  <%= text_field_tag('search') %>
+  <%= submit_tag("search!") %>
+<% end -%>
+
+<br />
+
 <table>
   <tr>
     <th>Claim type</th>
